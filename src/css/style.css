@@ -1,0 +1,92 @@
+header{
+    top: 5px;
+    height: 40px;
+    display: block;
+    background-color: #48be9d;
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+#homePage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+button,input[type=submit]{
+    background-color: #48be9d;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+button:hover,input[type=submit]:hover {
+    background-color: white;
+    color: #48be9d;
+    border: 2px solid #48be9d;
+    border-radius: 4px;
+}
+button,input[type=submit]{
+    transition-duration: 0.4s;
+}
+#addExpenseDiv{
+    display: none;
+}
+#addExpenseDiv section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#participantList{
+    height: 90%;
+}
+input[type=text],input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#paidBy option{
+    color: floralwhite;
+    background-color: #ffcc66;
+}
+.center-align{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+#expenselist{
+    display: none;
+    text-align: center;
+}
+#dueAmountDiv{
+    display: none;
+    text-align: center;
+}
+#expenselist tbody{
+    display: contents;
+}
+#dueAmountDiv tbody{
+    display: contents;
+}
+table, td, th {    
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 15px;
+}
+#expenseListTable tr::after{
+    content: "X";
+    font-weight: bold;
+    position: relative;
+    top: 15px;
+    padding: 15px;
+    cursor: pointer;
+    pointer-events: all;
+}

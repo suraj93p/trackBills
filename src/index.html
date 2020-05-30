@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>Splitwise</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="favicon" type="image/png" href="https://www.splitwise.com/apple-touch-icon-precomposed.png">
+      <link rel="stylesheet" href="css/style.css">
+      <script src="js/app.js"></script>
+</head>
+
+<body>
+      <header>splitwise</header>
+      <nav style="margin-top: 10px;">
+            <nav id="homePage">
+                  <button onclick="addExpense()">Add Expense</button>
+                  <button onclick="displayDueAmountList()">Due Amount List</button>
+                  <button onclick="displayExpenseList()">Expense List</button>
+            </nav>
+            <div id="addExpenseDiv">
+                  <form name="addExpenseForm">
+                        <section>
+                              <div>
+                                    <select id="participantList" multiple required></select>
+                              </div>
+                              <div>
+                                    <label for="expenseDescription">Description</label>
+                                    <input type="text" id="expenseDescription" name="expenseDescription" placeholder="Expense Description..." required>
+                                    <br/>
+                                    <label for="expenseAmount">Amount</label>
+                                    <input type="number" id="expenseAmount" name="expenseAmount" placeholder="Expense Amount" required>
+                                    <br/>
+                                    <label for="paidBy">Paid By</label>
+                                    <select id="paidBy" name="paidBy"></select>
+                                    <br/>
+                              </div>
+                        </section>
+                        <div class="center-align">
+                              <input type="submit" onclick="storeExpense()" value="Store Expense">
+                              <button formnovalidate onclick="showHomePage()">Back</button>
+                        </div>
+                  </form>
+            </div>
+            <div id="dueAmountDiv">
+                  <table id="noDueTable">
+                        <thead>
+                              <th>Owned By</th>
+                              <th>Owned To</th>
+                              <th>Amount</th>
+                        </thead>
+                        <tbody id="dueAmountTable"></tbody>
+                  </table>
+                  <div id="noDueAmount" style="display: none">No Due Amounts</div>
+                  <button onclick="showHomePage()" class="center-align">Back</button>
+            </div>
+            <div id="expenselist">
+                  <table id="expenseTable">
+                        <thead>
+                              <th>Expense Description</th>
+                              <th>Expense Amount</th>
+                              <th>Paid By</th>
+                              <th>Shared By</th>
+                        </thead>
+                        <tbody id="expenseListTable"></tbody>
+                  </table>
+                  <div id="noExpense" style="display: none">No Expense to Display</div>
+                  <div class="center-align">
+                        <button onclick="showHomePage()">Back</button>
+                        <button onclick="localStorage.clear();displayExpenseList()">Clear All Records</button>
+                  </div>
+            </div>
+      </nav>
+</body>
+
+</html>
